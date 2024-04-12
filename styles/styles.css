@@ -27,3 +27,9 @@ body{
     display: flex;
     gap: 30px;
 }
+
+.blockWrapper{
+    margin: 500px;
+    display: flex;
+    border: 1px solid;
+}

@@ -104,3 +104,29 @@ navbarContent.forEach(function(item) {
 
 // console.log(obj1)
 // console.log(obj2)
+
+var blockWrapper = document.querySelector(".blockWrapper")
+
+var blockArr = [
+    {
+        img: '',
+        text: 'first block'
+    },
+    {
+        img: '',
+        text: 'second block'
+    }
+]
+
+blockArr.forEach(function(item){
+    var block = document.createElement("div")
+    var img = document.createElement("img")
+    var text = document.createElement("p")
+
+    img.setAttribute("src", item.img)
+    text.textContent = item.text
+    block.append(img)
+    block.append(text)
+
+    blockWrapper.append(block)
+})
