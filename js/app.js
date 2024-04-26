@@ -150,6 +150,8 @@ var tableObj = {
   }
 }
 
+//test
+
 var tableWrapper = document.querySelector('.tableWrapper')
 
 function tableMaker(){
