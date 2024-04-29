@@ -137,11 +137,11 @@ navbarContent.forEach(function (item) {
 
 var tableObj = {
   table1: {
-      quantity: ['5-10', '11-20', '5-10', '5-10', '5-10', '5-10', '5-10', '5-10', '5-10'],
+      quantit: ['5-10', '11-20', '5-10', '5-10', '5-10', '5-10', '5-10', '5-10', '5-10'],
       price: ['2000 сом', '2000 сом', '2000 сом', '2000 сом', '2000 сом', '2000 сом', '2000 сом', '2000 сом', '2000 сом']
   },
   table2: {
-      quantity: ['5-10', '11-20', '5-10', '5-10', '5-10', '5-10', '5-10', '5-10', '5-10'],
+      quantity: ['11-20', '11-20', '11-20', '5-10', '11-20', '11-20', '11-20', '5-10', '5-10'],
       price: ['2000 сом', '2000 сом', '2000 сом', '2000 сом', '2000 сом', '2000 сом', '2000 сом', '2000 сом', '2000 сом']
   },
   table3: {
@@ -154,8 +154,9 @@ var tableObj = {
 
 var tableWrapper = document.querySelector('.tableWrapper')
 
-function tableMaker(){
+function tableMaker(tableData){
   var table = document.createElement('table')
+
 
   var tableHead = document.createElement('thead')
   var tableHeadTitle = document.createElement('th')
@@ -163,13 +164,37 @@ function tableMaker(){
   tableHead.append(tableHeadTitle)
 
   var tableBody = document.createElement('tbody')
+  //============================ table quantity
+  // var tableQuantity = document.createElement('tr')
+  // var tableQuantityTitle = document.createElement('th')
+  // tableQuantityTitle.textContent = 'Количество'
+  // tableQuantity.append(tableQuantityTitle)
+  // //============================= table price
+  // var tablePrice = document.createElement('tr')
+
+  // //============================ table quantity content 
+  // tableData.quantity?.forEach(function(item){
+  //   var tableCell = document.createElement('td')
+  //   tableCell.textContent = item
+  //   tableQuantity.append(tableCell)
+  // })
+
+  // tableBody.append(tableQuantity)
+
+  for(var row in tableData){
+    console.log(tableData[row])
+    console.log(row)
+  }
 
   table.append(tableHead)
   table.append(tableBody)
 
   tableWrapper.append(table)
 }
-tableMaker()
+
+for (var key in tableObj){
+  tableMaker(tableObj[key])
+}
 
 
 
